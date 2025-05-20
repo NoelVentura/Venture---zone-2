@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Venture Zone</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      background: url('LOGO.jpg') no-repeat center center;
+      background-size: cover;
+      background-attachment: fixed;
+    }
+    .overlay {
+      background-color: rgba(0, 0, 0, 0.75);
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+    }
+    .neon-text {
+      text-shadow:
+        0 0 5px #0ff,
+        0 0 10px #0ff,
+        0 0 20px #0ff,
+        0 0 40px #0ff;
+    }
+    .pulse {
+      animation: pulse 2s ease-in-out infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(1.03); opacity: 0.95; }
+    }
+  </style>
+</head>
+<body class="relative flex items-center justify-center">
+
+  <!-- Oscurecer fondo para mejor legibilidad -->
+  <div class="overlay"></div>
+
+  <main class="relative z-10 text-center text-white px-4">
+    <h1 class="text-5xl md:text-7xl font-bold neon-text pulse">Venture Zone</h1>
+    <p class="mt-6 text-lg md:text-xl text-blue-100 max-w-xl mx-auto">
+      Bienvenido al portal donde las ideas brillan. Explora, crea y emprende.
+    </p>
+    <button class="mt-10 px-6 py-3 bg-cyan-500 hover:bg-cyan-600 text-white font-semibold rounded-full shadow-lg transition duration-300">
+      Entrar
+    </button>
+  </main>
+
+  <script>
+    anime({
+      targets: 'h1',
+      translateY: [-50, 0],
+      opacity: [0, 1],
+      duration: 1500,
+      delay: 300,
+      easing: 'easeOutExpo'
+    });
+    anime({
+      targets: 'p',
+      opacity: [0, 1],
+      duration: 1200,
+      delay: 800,
+      easing: 'easeOutQuad'
+    });
+    anime({
+      targets: 'button',
+      scale: [0.8, 1],
+      opacity: [0, 1],
+      duration: 1000,
+      delay: 1300,
+      easing: 'easeOutBack'
+    });
+  </script>
+
+</body>
+</html>
